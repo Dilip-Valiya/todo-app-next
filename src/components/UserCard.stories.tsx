@@ -8,7 +8,7 @@ const meta: Meta<typeof UserCard> = {
 
 export default meta;
 
-type Story = StoryObj<typeof UserCard>;
+type Story = StoryObj<typeof meta>;
 
 export const BasicCard: Story = {
   args: {
