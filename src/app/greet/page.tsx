@@ -1,8 +1,15 @@
+import styled from "styled-components";
+
 type GreetMessage = {
   message: string;
 };
 
-export async function getMessage() {
+const Wrapper = styled.div`
+  display: flex;
+  padding: 16px;
+`;
+
+export async function getMessage(): Promise<string> {
   const res: Response = await fetch("http://localhost:3000/api/greet", {
     cache: "no-store",
   });
@@ -10,7 +17,11 @@ export async function getMessage() {
   return greetMessage.message;
 }
 
-export default async function Greet() {
+export default async function Greet(): Promise<JSX.Element> {
   const message: string = await getMessage();
-  return <p>{message}</p>;
+  return (
+    <Wrapper>
+      <p>{message}</p>
+    </Wrapper>
+  );
 }

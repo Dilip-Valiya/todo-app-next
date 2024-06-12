@@ -4,6 +4,7 @@ import UserCard from "./UserCard";
 
 const meta: Meta<typeof UserCard> = {
   component: UserCard,
+  title: "Dilip/UserCard",
 };
 
 export default meta;
